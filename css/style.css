@@ -1,0 +1,70 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+button a{
+    text-decoration: none;
+    color: white;
+}
+
+form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: purple;
+    width: 100%;
+}
+
+table, td, th, tr{
+    border: 3px solid #000000;
+    padding: 20px;
+   
+    color: white;
+    text-align: center;
+}
+tr{
+  background-color: green;
+}
+button{
+    margin: 10px 5px;
+    display: inline-block;
+}
+
+.modal{
+    display: flex;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+input{
+    margin-top: 5px;
+    text-align: center;
+}
+label{
+    color: white;
+}
+.tarefas{
+    display: block;
+    margin-top: 20px;
+}
+.concluido{
+    text-decoration: line-through;
+}
+.checar{
+    cursor: pointer;
+    border-radius: 50%;
+    margin-left: 10px;
+}
+
+tr:hover{
+    background-color: blue;
+}
