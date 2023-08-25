@@ -1,39 +1,87 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
 }
-button a{
-    text-decoration: none;
-    color: white;
+
+body{
+    height: 100vh;
 }
 
-form{
+main{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: gray;
+    max-width: 1200px;
+    min-width: 300px;
+}
+.containerFormulario{
+    width: 100%;
+    padding: 5px;
+    margin: auto;
+}
+/* formulario de cadastrar tarefas */
+form {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     background-color: purple;
-    width: 100%;
+    border-radius: 30px;
+    padding: 10px;
+    max-width: 300px;
+    margin: auto;
 }
-
-table, td, th, tr{
+/* tabelas */
+table{
+    margin-top: 20px;
+    max-width: 100%;
+}
+table, td, th, tr {
     border: 3px solid #000000;
-    padding: 20px;
-   
     color: white;
     text-align: center;
 }
-tr{
-  background-color: green;
+td, th{
+    padding: 5px;
 }
-button{
-    margin: 10px 5px;
-    display: inline-block;
+tr {
+    background-color: green;
+  
 }
 
-.modal{
+tr:hover {
+    background-color: blue;
+}
+
+button {
+    display: inline-block;
+    padding: 10px;
+    background-color: rgb(35, 67, 67);
+    border-radius: 10%;
+    color: white;
+    border: none;
+    margin: 5px;
+    white-space: nowrap;
+    max-width: 100%;
+}
+button a {
+    text-decoration: none;
+    color: white;
+}
+label {
+    color: white;
+}
+input {
+    margin-top: 5px;
+    text-align: center;
+}
+/* Função modal */
+.modal {
     display: flex;
     position: fixed;
     left: 0;
@@ -43,28 +91,39 @@ button{
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.5);
 }
-input{
-    margin-top: 5px;
-    text-align: center;
+.containerModal{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgb(45, 48, 185);
+    padding: 20px;
+    border-radius: 30px;
+    max-width: 400px;
+    margin: auto;
 }
-label{
-    color: white;
+.modalEditar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
-.tarefas{
+
+
+/* Classes usadas no javascript dinamicamente */
+.tarefas {
     display: block;
     margin-top: 20px;
 }
-.concluido{
+
+.concluido {
     text-decoration: line-through;
 }
-.checar{
+
+.checar {
     cursor: pointer;
     border-radius: 50%;
     margin-left: 10px;
-}
-
-tr:hover{
-    background-color: blue;
 }

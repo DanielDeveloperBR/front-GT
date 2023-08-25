@@ -52,6 +52,8 @@ fetch('http://localhost:3000/usuario', options)
         window.location.href = "usuarios.html"
       }
       function editar(elementCopia) {
+        const modal = document.createElement("div")
+        const containerModal = document.createElement("div")
         const modalEditar = document.createElement("div")
         const labelNome = document.createElement("label")
         const labelSenha = document.createElement("label")
@@ -66,27 +68,30 @@ fetch('http://localhost:3000/usuario', options)
         btnEditar.textContent = "Editar"
         btnCancelar.textContent = "Cancelar"
 
-        document.querySelector("body").append(modalEditar)
-
+        
         modalEditar.append(labelNome)
         modalEditar.append(inputNome)
         modalEditar.append(labelSenha)
         modalEditar.append(inputSenha)
         modalEditar.append(btnEditar)
         modalEditar.append(btnCancelar)
-        modalEditar.classList.add("modal")
+        
+        modal.classList.add("modal")
+        containerModal.classList.add("containerModal")
+        modalEditar.classList.add("modalEditar")
+        
+        document.querySelector("body").append(modal)
+        containerModal.append(modalEditar)
+        modal.appendChild(containerModal)
 
         // cancelar evento
         btnCancelar.addEventListener("click", () => {
-          modalEditar.style.display = "none"
-          modalEditar.classList.remove("modal")
+          modal.style.display = "none"
         })
         inputNome.value = elementCopia.nome
         inputSenha.value = elementCopia.senha
 
-
         btnEditar.addEventListener("click", () => {
-
 
           fetch(`http://localhost:3000/usuario/id/${elementCopia.id}`, {
             method: 'PUT',

@@ -105,6 +105,8 @@ fetch('http://localhost:3000/tarefas', options)
       }
       // editar
       function editar(elementCopia) {
+        const containerModal = document.createElement("div")
+        const modal = document.createElement("div")
         const modalEditar = document.createElement("div")
         const labelTarefa = document.createElement("label")
         const labelData = document.createElement("label")
@@ -121,11 +123,8 @@ fetch('http://localhost:3000/tarefas', options)
         labelData.textContent = "Data"
         labelHora.textContent = "Hora"
 
-
         btnEditar.textContent = "Editar"
         btnCancelar.textContent = "Cancelar"
-
-        document.querySelector("body").append(modalEditar)
 
         modalEditar.append(labelTarefa)
         modalEditar.append(inputTarefa)
@@ -135,12 +134,18 @@ fetch('http://localhost:3000/tarefas', options)
         modalEditar.append(inputHora)
         modalEditar.append(btnEditar)
         modalEditar.append(btnCancelar)
-        modalEditar.classList.add("modal")
+
+        modal.classList.add("modal")
+        containerModal.classList.add("containerModal")
+        modalEditar.classList.add("modalEditar")
+        
+        document.querySelector("main").append(modal)
+        containerModal.appendChild(modalEditar)
+        modal.appendChild(containerModal)
 
         // cancelar evento
         btnCancelar.addEventListener("click", () => {
-          modalEditar.style.display = "none"
-          modalEditar.classList.remove("modal")
+          modal.style.display = "none"
         })
 
         inputTarefa.value = elementCopia.tarefa
